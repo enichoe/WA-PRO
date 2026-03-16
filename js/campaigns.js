@@ -200,7 +200,20 @@ async function loadContactsForSelector(campaignId = null) {
     const list = document.getElementById('campaignContactList');
     if (!list) return;
 
-    // In a real app, if editing, we'd fetch current selected contacts
+    // Ensure contacts are loaded
+    if (!window.allContacts || window.allContacts.length === 0) {
+        const { data: { user } } = await supabase.auth.getUser();
+        if (user) {
+            const { data } = await supabase.from('contacts').select('*').eq('user_id', user.id);
+            window.allContacts = data || [];
+        }
+    }
+
+    if (!window.allContacts || window.allContacts.length === 0) {
+        list.innerHTML = '<p class="empty-msg">No tienes contactos registrados. <a href="#contacts" onclick="closeCampaignModal()">Crea algunos primero.</a></p>';
+        return;
+    }
+
     list.innerHTML = window.allContacts.map(c => `
         <div class="contact-selector-item">
             <label class="checkbox-wrapper">

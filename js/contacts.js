@@ -27,6 +27,7 @@ async function loadContacts() {
         if (error) throw error;
         
         allContacts = data || [];
+        window.allContacts = allContacts; // Sync global reference
         renderContacts();
         updateTagsFilter();
         updateDashboardStats();
