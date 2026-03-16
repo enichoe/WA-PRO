@@ -240,6 +240,7 @@ function updateSelectedCount() {
 }
 
 // Global exposure
+window.allContacts = allContacts;
 window.loadContacts = loadContacts;
 window.saveContact = saveContact;
 window.deleteContact = deleteContact;
