@@ -30,6 +30,7 @@ function showSection(sectionId) {
     if (sectionId === 'campaigns') loadCampaigns();
     if (sectionId === 'dashboard') updateDashboardStats();
     if (sectionId === 'templates') loadTemplates();
+    if (sectionId === 'sender') updateSenderCampaigns();
 }
 
 /**

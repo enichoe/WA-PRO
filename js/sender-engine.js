@@ -15,7 +15,13 @@ let sendingConfig = {
  */
 async function selectCampaignForSending(campaignId) {
     const select = document.getElementById('senderCampaign');
-    if (select) select.value = campaignId;
+    if (select) {
+        // If the selector isn't populated yet, wait for it
+        if (select.options.length <= 1) {
+            await updateSenderCampaigns();
+        }
+        select.value = campaignId;
+    }
     loadCampaignContacts();
 }
 
@@ -210,9 +216,22 @@ function updateCurrentProgress(item) {
 /**
  * Populates the campaign selector in the sender view
  */
-function updateSenderCampaigns() {
+async function updateSenderCampaigns() {
     const select = document.getElementById('senderCampaign');
     if (!select) return;
+
+    // If campaigns aren't loaded, fetch them now
+    if (!window.allCampaigns || window.allCampaigns.length === 0) {
+        const { data: { user } } = await supabase.auth.getUser();
+        if (user) {
+            const { data } = await supabase
+                .from('campaigns')
+                .select('*')
+                .eq('user_id', user.id)
+                .order('created_at', { ascending: false });
+            window.allCampaigns = data || [];
+        }
+    }
 
     if (window.allCampaigns && window.allCampaigns.length > 0) {
         select.innerHTML = '<option value="">-- Seleccionar Campaña --</option>' + 
