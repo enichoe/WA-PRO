@@ -12,10 +12,11 @@ async function checkAuth() {
     }
 
     if (!session) {
-        // If we are on index.html and it's acting as the dashboard, 
-        // we might want to redirect to a login page if one exists.
-        // For now, since index.html IS the dashboard, we check if we're "logged in".
-        console.warn('No active session found.');
+        console.warn('No active session found. Redirecting to login...');
+        // Only redirect if we are not already on the login page
+        if (!window.location.pathname.includes('login.html')) {
+            window.location.href = 'login.html';
+        }
         return null;
     }
 
