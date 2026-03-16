@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - WA Sender Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dashboard-page">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="brand-logo-small">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="22" fill="url(#logoGradSidebar)" />
+                    <path d="M24 12C17.4 12 12 17.4 12 24C12 26.1 12.6 28.2 13.6 30L12 36L18.2 34.4C19.9 35.3 21.9 35.8 24 35.8C30.6 35.8 36 30.4 36 23.8C36 17.2 30.6 12 24 12ZM30 28.4C29.7 29.2 28.4 30 27.4 30.2C26.7 30.4 25.8 30.5 24.4 29.9C22.2 29 18.8 26.6 18.4 26.2C18 25.8 15.6 23.3 15.6 20.9C15.6 18.5 16.9 17.3 17.4 16.8C17.9 16.3 18.5 16.2 18.8 16.2C19.1 16.2 19.5 16.2 19.8 16.2C20.1 16.2 20.5 16.1 20.9 17.1C21.3 18.1 22.2 20.4 22.3 20.6C22.4 20.8 22.5 21.1 22.3 21.4C22.1 21.8 21.9 22.1 21.6 22.4C21.3 22.8 21 23.1 20.7 23.4C20.4 23.8 20.1 24.1 20.4 24.7C20.7 25.3 21.7 26.9 23.2 28.2C25.1 29.9 26.7 30.4 27.2 30.7C27.7 30.9 28 30.9 28.3 30.5C28.6 30.1 29.4 29.1 29.7 28.6C30 28.1 30.3 28.2 30.7 28.3C31.1 28.4 33.3 29.5 33.8 29.7C34.3 29.9 34.6 30 34.7 30.2C34.8 30.5 34.8 31.5 30 28.4Z" fill="white"/>
+                    <defs>
+                        <linearGradient id="logoGradSidebar" x1="0" y1="0" x2="48" y2="48">
+                            <stop offset="0%" stop-color="#22c55e"/>
+                            <stop offset="100%" stop-color="#16a34a"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <span class="brand-name">WA Sender Pro</span>
+            <button class="sidebar-toggle" onclick="toggleSidebar()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <span class="nav-section-title">Principal</span>
+                <ul class="nav-list">
+                    <li class="nav-item active" data-section="dashboard">
+                        <a href="#dashboard">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7"/>
+                                <rect x="14" y="3" width="7" height="7"/>
+                                <rect x="14" y="14" width="7" height="7"/>
+                                <rect x="3" y="14" width="7" height="7"/>
+                            </svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="contacts">
+                        <a href="#contacts">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                            <span>Contactos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="import">
+                        <a href="#import">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="17 8 12 3 7 8"/>
+                                <line x1="12" y1="3" x2="12" y2="15"/>
+                            </svg>
+                            <span>Importar Excel</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <span class="nav-section-title">Campanas</span>
+                <ul class="nav-list">
+                    <li class="nav-item" data-section="campaigns">
+                        <a href="#campaigns">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                            <span>Campanas</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="sender">
+                        <a href="#sender">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                            <span>Enviar</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="history">
+                        <a href="#history">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>Historial</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="templates">
+                        <a href="#templates">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10 9 9 9 8 9"/>
+                            </svg>
+                            <span>Plantillas</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <span class="nav-section-title">Sistema</span>
+                <ul class="nav-list">
+                    <li class="nav-item" data-section="settings">
+                        <a href="#settings">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                            </svg>
+                            <span>Configuracion</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar">
+                    <span>U</span>
+                </div>
+                <div class="user-details">
+                    <span class="user-name" id="userName">Usuario</span>
+                    <span class="user-plan">Plan Gratuito</span>
+                </div>
+            </div>
+            <button class="logout-btn" onclick="logout()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="mobile-menu-btn" onclick="toggleSidebar()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </button>
+                <h1 class="page-title" id="pageTitle">Dashboard</h1>
+            </div>
+            <div class="topbar-right">
+                <div class="search-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    <input type="text" placeholder="Buscar contactos, campanas..." id="globalSearch">
+                </div>
+                <button class="notification-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                    </svg>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="help-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Content Sections -->
+        <div class="content-wrapper">
+            <!-- Dashboard Section -->
+            <section class="content-section active" id="section-dashboard">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon contacts-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="statContacts">0</span>
+                            <span class="stat-label">Total Contactos</span>
+                        </div>
+                        <div class="stat-trend positive">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                                <polyline points="17 6 23 6 23 12"/>
+                            </svg>
+                            <span>+12%</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon campaigns-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="statCampaigns">0</span>
+                            <span class="stat-label">Campanas Creadas</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon sent-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="statMessages">0</span>
+                            <span class="stat-label">Mensajes Enviados</span>
+                        </div>
+                        <div class="stat-trend positive">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                                <polyline points="17 6 23 6 23 12"/>
+                            </svg>
+                            <span>+28%</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon active-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="statActive">0</span>
+                            <span class="stat-label">Campanas Activas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <h3>Acciones Rapidas</h3>
+                    <div class="actions-grid">
+                        <button class="action-card" onclick="showSection('contacts')">
+                            <div class="action-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="8.5" cy="7" r="4"/>
+                                    <line x1="20" y1="8" x2="20" y2="14"/>
+                                    <line x1="23" y1="11" x2="17" y2="11"/>
+                                </svg>
+                            </div>
+                            <span>Agregar Contacto</span>
+                        </button>
+                        <button class="action-card" onclick="showSection('import')">
+                            <div class="action-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="17 8 12 3 7 8"/>
+                                    <line x1="12" y1="3" x2="12" y2="15"/>
+                                </svg>
+                            </div>
+                            <span>Importar Excel</span>
+                        </button>
+                        <button class="action-card" onclick="showSection('campaigns')">
+                            <div class="action-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                                </svg>
+                            </div>
+                            <span>Nueva Campana</span>
+                        </button>
+                        <button class="action-card" onclick="showSection('sender')">
+                            <div class="action-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13"/>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                                </svg>
+                            </div>
+                            <span>Enviar Mensajes</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Campanas Recientes</h3>
+                            <button class="btn-ghost" onclick="showSection('campaigns')">Ver todas</button>
+                        </div>
+                        <div class="campaigns-list" id="recentCampaigns">
+                            <div class="empty-state">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                                </svg>
+                                <p>No hay campanas aun</p>
+                                <button class="btn-primary" onclick="showSection('campaigns')">Crear Primera Campana</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Actividad Reciente</h3>
+                        </div>
+                        <div class="activity-list" id="recentActivity">
+                            <div class="empty-state">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                <p>Sin actividad reciente</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contacts Section -->
+            <section class="content-section" id="section-contacts">
+                <div class="section-header">
+                    <div class="header-actions">
+                        <button class="btn-primary" onclick="openContactModal()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                            <span>Nuevo Contacto</span>
+                        </button>
+                        <button class="btn-secondary" onclick="showSection('import')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="17 8 12 3 7 8"/>
+                                <line x1="12" y1="3" x2="12" y2="15"/>
+                            </svg>
+                            <span>Importar</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters-bar">
+                    <div class="filter-group">
+                        <div class="search-input">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                            </svg>
+                            <input type="text" placeholder="Buscar por nombre, telefono, empresa..." id="contactSearch" oninput="filterContacts()">
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <select id="tagFilter" onchange="filterContacts()">
+                            <option value="">Todas las etiquetas</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="results-count" id="contactsCount">0 contactos</span>
+                    </div>
+                </div>
+
+                <!-- Contacts Table -->
+                <div class="table-container">
+                    <table class="data-table" id="contactsTable">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label class="checkbox-wrapper">
+                                        <input type="checkbox" id="selectAllContacts" onchange="toggleSelectAll()">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </th>
+                                <th>Nombre</th>
+                                <th>Telefono</th>
+                                <th>Empresa</th>
+                                <th>Etiqueta</th>
+                                <th>Creado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contactsTableBody">
+                            <!-- Dynamic content -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Bulk Actions -->
+                <div class="bulk-actions hidden" id="bulkActions">
+                    <span id="selectedCount">0 seleccionados</span>
+                    <button class="btn-secondary" onclick="bulkAddToCampaign()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                        Agregar a campana
+                    </button>
+                    <button class="btn-secondary" onclick="bulkExport()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Exportar
+                    </button>
+                    <button class="btn-danger" onclick="bulkDelete()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="3 6 5 6 21 6"/>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                        </svg>
+                        Eliminar
+                    </button>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination" id="contactsPagination">
+                    <button class="btn-ghost" id="prevPage" onclick="changePage(-1)" disabled>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"/>
+                        </svg>
+                    </button>
+                    <span id="paginationInfo">Pagina 1 de 1</span>
+                    <button class="btn-ghost" id="nextPage" onclick="changePage(1)" disabled>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Import Section -->
+            <section class="content-section" id="section-import">
+                <div class="import-container">
+                    <div class="import-header">
+                        <h2>Importar Contactos desde Excel</h2>
+                        <p>Sube un archivo CSV o XLSX para importar multiples contactos</p>
+                    </div>
+
+                    <div class="import-dropzone" id="dropzone">
+                        <input type="file" id="fileInput" accept=".csv,.xlsx,.xls" hidden>
+                        <div class="dropzone-content">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="17 8 12 3 7 8"/>
+                                <line x1="12" y1="3" x2="12" y2="15"/>
+                            </svg>
+                            <h3>Arrastra tu archivo aqui</h3>
+                            <p>o <button class="link-btn" onclick="document.getElementById('fileInput').click()">selecciona un archivo</button></p>
+                            <span class="file-types">CSV, XLSX, XLS (max 5MB)</span>
+                        </div>
+                    </div>
+
+                    <!-- File Preview -->
+                    <div class="import-preview hidden" id="importPreview">
+                        <div class="preview-header">
+                            <div class="file-info">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                </svg>
+                                <span id="fileName">archivo.csv</span>
+                                <span id="fileSize">0 KB</span>
+                            </div>
+                            <button class="btn-ghost" onclick="clearImport()">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="6" x2="6" y2="18"/>
+                                    <line x1="6" y1="6" x2="18" y2="18"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Column Mapping -->
+                        <div class="column-mapping" id="columnMapping">
+                            <h4>Mapeo de Columnas</h4>
+                            <div class="mapping-grid">
+                                <div class="mapping-item">
+                                    <label>Nombre</label>
+                                    <select id="mapName" class="mapping-select"></select>
+                                </div>
+                                <div class="mapping-item">
+                                    <label>Telefono *</label>
+                                    <select id="mapPhone" class="mapping-select" required></select>
+                                </div>
+                                <div class="mapping-item">
+                                    <label>Empresa</label>
+                                    <select id="mapCompany" class="mapping-select"></select>
+                                </div>
+                                <div class="mapping-item">
+                                    <label>Etiqueta</label>
+                                    <select id="mapTag" class="mapping-select"></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Preview Table -->
+                        <div class="preview-table-container">
+                            <h4>Vista Previa <span id="previewCount">(0 filas)</span></h4>
+                            <div class="table-container">
+                                <table class="data-table preview-table">
+                                    <thead id="previewHead"></thead>
+                                    <tbody id="previewBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Import Options -->
+                        <div class="import-options">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" id="skipDuplicates" checked>
+                                <span class="checkmark"></span>
+                                <span>Omitir duplicados (por telefono)</span>
+                            </label>
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" id="updateExisting">
+                                <span class="checkmark"></span>
+                                <span>Actualizar contactos existentes</span>
+                            </label>
+                        </div>
+
+                        <!-- Validation Summary -->
+                        <div class="validation-summary" id="validationSummary">
+                            <div class="summary-item valid">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                <span id="validCount">0 validos</span>
+                            </div>
+                            <div class="summary-item invalid">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="15" y1="9" x2="9" y2="15"/>
+                                    <line x1="9" y1="9" x2="15" y2="15"/>
+                                </svg>
+                                <span id="invalidCount">0 invalidos</span>
+                            </div>
+                            <div class="summary-item duplicate">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <line x1="12" y1="8" x2="12" y2="12"/>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"/>
+                                </svg>
+                                <span id="duplicateCount">0 duplicados</span>
+                            </div>
+                        </div>
+
+                        <div class="import-actions">
+                            <button class="btn-secondary" onclick="clearImport()">Cancelar</button>
+                            <button class="btn-primary" id="importBtn" onclick="importContacts()">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="17 8 12 3 7 8"/>
+                                    <line x1="12" y1="3" x2="12" y2="15"/>
+                                </svg>
+                                <span>Importar Contactos</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Template Download -->
+                    <div class="template-download">
+                        <p>Necesitas una plantilla?</p>
+                        <button class="btn-ghost" onclick="downloadTemplate()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            Descargar Plantilla CSV
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Campaigns Section -->
+            <section class="content-section" id="section-campaigns">
+                <div class="section-header">
+                    <div class="header-actions">
+                        <button class="btn-primary" onclick="openCampaignModal()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                            <span>Nueva Campana</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Campaigns Grid -->
+                <div class="campaigns-grid" id="campaignsGrid">
+                    <!-- Dynamic content -->
+                </div>
+            </section>
+
+            <!-- Sender Section -->
+            <section class="content-section" id="section-sender">
+                <div class="sender-container">
+                    <div class="sender-setup">
+                        <h2>Configurar Envio</h2>
+                        
+                        <div class="setup-form">
+                            <div class="form-group">
+                                <label>Seleccionar Campana</label>
+                                <select id="senderCampaign" onchange="loadCampaignContacts()">
+                                    <option value="">Selecciona una campana</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Mensaje</label>
+                                <div class="message-editor">
+                                    <textarea id="senderMessage" rows="6" placeholder="Escribe tu mensaje...&#10;&#10;Usa {nombre}, {empresa}, {telefono} para personalizar"></textarea>
+                                    <div class="editor-toolbar">
+                                        <button type="button" class="toolbar-btn" onclick="insertVariable('nombre')">{nombre}</button>
+                                        <button type="button" class="toolbar-btn" onclick="insertVariable('empresa')">{empresa}</button>
+                                        <button type="button" class="toolbar-btn" onclick="insertVariable('telefono')">{telefono}</button>
+                                    </div>
+                                    <div class="char-count">
+                                        <span id="charCount">0</span>/1000 caracteres
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Delay entre mensajes</label>
+                                    <select id="senderDelay">
+                                        <option value="3">3 segundos</option>
+                                        <option value="5" selected>5 segundos</option>
+                                        <option value="10">10 segundos</option>
+                                        <option value="15">15 segundos</option>
+                                        <option value="30">30 segundos</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Lote (pausa cada X mensajes)</label>
+                                    <input type="number" id="senderBatch" value="50" min="10" max="100">
+                                </div>
+                                <div class="form-group">
+                                    <label>Pausa entre lotes</label>
+                                    <select id="senderBatchPause">
+                                        <option value="30">30 segundos</option>
+                                        <option value="60" selected>1 minuto</option>
+                                        <option value="120">2 minutos</option>
+                                        <option value="300">5 minutos</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recipients Preview -->
+                        <div class="recipients-section hidden" id="recipientsSection">
+                            <h3>Destinatarios (<span id="recipientsCount">0</span>)</h3>
+                            <div class="table-container">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Telefono</th>
+                                            <th>Empresa</th>
+                                            <th>Mensaje Personalizado</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="recipientsTable">
+                                        <!-- Dynamic -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sender Progress -->
+                    <div class="sender-progress hidden" id="senderProgress">
+                        <div class="progress-header">
+                            <h3>Progreso de Envio</h3>
+                            <div class="progress-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Enviados</span>
+                                    <span class="stat-value" id="sentCount">0</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Pendientes</span>
+                                    <span class="stat-value" id="pendingCount">0</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Errores</span>
+                                    <span class="stat-value" id="errorCount">0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="progressBar">
+                                <div class="progress-fill"></div>
+                            </div>
+                            <span class="progress-percent" id="progressPercent">0%</span>
+                        </div>
+
+                        <div class="current-message" id="currentMessage">
+                            <span class="status-label">Enviando a:</span>
+                            <span class="recipient-name">-</span>
+                        </div>
+
+                        <div class="sender-controls">
+                            <button class="btn-secondary" id="pauseBtn" onclick="pauseSending()">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="6" y="4" width="4" height="16"/>
+                                    <rect x="14" y="4" width="4" height="16"/>
+                                </svg>
+                                <span>Pausar</span>
+                            </button>
+                            <button class="btn-danger" id="stopBtn" onclick="stopSending()">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                </svg>
+                                <span>Detener</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Start Button -->
+                    <div class="sender-actions" id="senderActions">
+                        <button class="btn-secondary" onclick="previewMessages()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                            <span>Vista Previa</span>
+                        </button>
+                        <button class="btn-primary btn-large" id="startBtn" onclick="startSending()" disabled>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                            <span>Iniciar Envio</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- History Section -->
+            <section class="content-section" id="section-history">
+                <div class="history-container">
+                    <div class="filters-bar">
+                        <div class="filter-group">
+                            <select id="historyCampaignFilter">
+                                <option value="">Todas las campanas</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <select id="historyStatusFilter">
+                                <option value="">Todos los estados</option>
+                                <option value="sent">Enviados</option>
+                                <option value="pending">Pendientes</option>
+                                <option value="error">Errores</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <input type="date" id="historyDateFilter">
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Campana</th>
+                                    <th>Contacto</th>
+                                    <th>Telefono</th>
+                                    <th>Mensaje</th>
+                                    <th>Estado</th>
+                                    <th>Fecha</th>
+                                </tr>
+                            </thead>
+                            <tbody id="historyTableBody">
+                                <!-- Dynamic -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Templates Section -->
+            <section class="content-section" id="section-templates">
+                <div class="section-header">
+                    <h2>Plantillas de Mensajes</h2>
+                    <button class="btn-primary" onclick="openTemplateModal()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                        <span>Nueva Plantilla</span>
+                    </button>
+                </div>
+
+                <div class="templates-grid" id="templatesGrid">
+                    <!-- Dynamic -->
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section class="content-section" id="section-settings">
+                <div class="settings-container">
+                    <div class="settings-card">
+                        <h3>Perfil</h3>
+                        <form id="profileForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Nombre completo</label>
+                                    <input type="text" id="settingsName">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" id="settingsEmail" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Empresa</label>
+                                <input type="text" id="settingsCompany">
+                            </div>
+                            <button type="submit" class="btn-primary">Guardar Cambios</button>
+                        </form>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3>Configuracion de Envio</h3>
+                        <form id="settingsSendForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Delay por defecto (segundos)</label>
+                                    <input type="number" id="settingsDelay" value="5" min="3" max="60">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tamano de lote por defecto</label>
+                                    <input type="number" id="settingsBatch" value="50" min="10" max="100">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Pausa entre lotes (segundos)</label>
+                                <input type="number" id="settingsBatchPause" value="60" min="30" max="300">
+                            </div>
+                            <button type="submit" class="btn-primary">Guardar Configuracion</button>
+                        </form>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3>Notificaciones</h3>
+                        <div class="settings-options">
+                            <label class="toggle-wrapper">
+                                <span>Notificaciones de campana</span>
+                                <input type="checkbox" id="settingsNotifications" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <label class="toggle-wrapper">
+                                <span>Sonidos</span>
+                                <input type="checkbox" id="settingsSound" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-card danger">
+                        <h3>Zona de Peligro</h3>
+                        <div class="danger-actions">
+                            <div class="danger-item">
+                                <div>
+                                    <h4>Eliminar todos los contactos</h4>
+                                    <p>Esta accion no se puede deshacer</p>
+                                </div>
+                                <button class="btn-danger" onclick="confirmDeleteAllContacts()">Eliminar</button>
+                            </div>
+                            <div class="danger-item">
+                                <div>
+                                    <h4>Eliminar cuenta</h4>
+                                    <p>Se eliminaran todos tus datos permanentemente</p>
+                                </div>
+                                <button class="btn-danger" onclick="confirmDeleteAccount()">Eliminar Cuenta</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Contact Modal -->
+    <div class="modal hidden" id="contactModal">
+        <div class="modal-backdrop" onclick="closeContactModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="contactModalTitle">Nuevo Contacto</h3>
+                <button class="modal-close" onclick="closeContactModal()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <form id="contactForm">
+                <input type="hidden" id="contactId">
+                <div class="form-group">
+                    <label for="contactName">Nombre *</label>
+                    <input type="text" id="contactName" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactPhone">Telefono *</label>
+                    <input type="tel" id="contactPhone" placeholder="+52 123 456 7890" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactCompany">Empresa</label>
+                    <input type="text" id="contactCompany">
+                </div>
+                <div class="form-group">
+                    <label for="contactTag">Etiqueta</label>
+                    <input type="text" id="contactTag" placeholder="Ej: Clientes, Proveedores...">
+                </div>
+                <div class="form-group">
+                    <label for="contactNotes">Notas</label>
+                    <textarea id="contactNotes" rows="3"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeContactModal()">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Campaign Modal -->
+    <div class="modal hidden" id="campaignModal">
+        <div class="modal-backdrop" onclick="closeCampaignModal()"></div>
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3 id="campaignModalTitle">Nueva Campana</h3>
+                <button class="modal-close" onclick="closeCampaignModal()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <form id="campaignForm">
+                <input type="hidden" id="campaignId">
+                <div class="form-group">
+                    <label for="campaignName">Nombre de la Campana *</label>
+                    <input type="text" id="campaignName" placeholder="Ej: Promocion Enero 2025" required>
+                </div>
+                <div class="form-group">
+                    <label for="campaignMessage">Mensaje *</label>
+                    <textarea id="campaignMessage" rows="6" placeholder="Hola {nombre}!&#10;&#10;Tenemos una oferta especial para {empresa}..."></textarea>
+                    <div class="char-count">
+                        <span id="campaignCharCount">0</span>/1000 caracteres
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Seleccionar Contactos</label>
+                    <div class="contact-selector">
+                        <div class="selector-actions">
+                            <button type="button" class="btn-ghost" onclick="selectAllCampaignContacts()">Seleccionar todos</button>
+                            <button type="button" class="btn-ghost" onclick="deselectAllCampaignContacts()">Deseleccionar todos</button>
+                        </div>
+                        <div class="selector-filters">
+                            <input type="text" id="contactSelectorSearch" placeholder="Buscar..." oninput="filterContactSelector()">
+                            <select id="contactSelectorTag" onchange="filterContactSelector()">
+                                <option value="">Todas las etiquetas</option>
+                            </select>
+                        </div>
+                        <div class="contact-list" id="campaignContactList">
+                            <!-- Dynamic -->
+                        </div>
+                        <span class="selection-count" id="selectedContactsCount">0 contactos seleccionados</span>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeCampaignModal()">Cancelar</button>
+                    <button type="submit" class="btn-primary">Crear Campana</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Template Modal -->
+    <div class="modal hidden" id="templateModal">
+        <div class="modal-backdrop" onclick="closeTemplateModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="templateModalTitle">Nueva Plantilla</h3>
+                <button class="modal-close" onclick="closeTemplateModal()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <form id="templateForm">
+                <input type="hidden" id="templateId">
+                <div class="form-group">
+                    <label for="templateName">Nombre *</label>
+                    <input type="text" id="templateName" placeholder="Ej: Bienvenida Cliente" required>
+                </div>
+                <div class="form-group">
+                    <label for="templateMessage">Mensaje *</label>
+                    <textarea id="templateMessage" rows="6" placeholder="Hola {nombre}!&#10;&#10;Bienvenido a nuestra comunidad..." required></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeTemplateModal()">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirm Modal -->
+    <div class="modal hidden" id="confirmModal">
+        <div class="modal-backdrop" onclick="closeConfirmModal()"></div>
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h3 id="confirmTitle">Confirmar</h3>
+            </div>
+            <p id="confirmMessage"></p>
+            <div class="modal-actions">
+                <button class="btn-secondary" onclick="closeConfirmModal()">Cancelar</button>
+                <button class="btn-danger" id="confirmBtn">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="spinner"></div>
+        <span id="loadingText">Cargando...</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/contacts.js"></script>
+    <script src="js/campaigns.js"></script>
+    <script src="js/excel-import.js"></script>
+    <script src="js/sender-engine.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
