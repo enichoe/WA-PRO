@@ -207,6 +207,21 @@ function updateCurrentProgress(item) {
     container.querySelector('.recipient-name').textContent = item.contacts.name;
 }
 
+/**
+ * Populates the campaign selector in the sender view
+ */
+function updateSenderCampaigns() {
+    const select = document.getElementById('senderCampaign');
+    if (!select) return;
+
+    if (window.allCampaigns && window.allCampaigns.length > 0) {
+        select.innerHTML = '<option value="">-- Seleccionar Campaña --</option>' + 
+            window.allCampaigns.map(c => `<option value="${c.id}">${c.name}</option>`).join('');
+    } else {
+        select.innerHTML = '<option value="">Crea una campaña primero</option>';
+    }
+}
+
 // Global exposure
 window.selectCampaignForSending = selectCampaignForSending;
 window.loadCampaignContacts = loadCampaignContacts;
@@ -215,3 +230,4 @@ window.pauseSending = pauseSending;
 window.resumeSending = resumeSending;
 window.stopSending = stopSending;
 window.insertVariable = insertVariable;
+window.updateSenderCampaigns = updateSenderCampaigns;

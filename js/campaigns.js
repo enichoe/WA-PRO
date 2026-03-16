@@ -226,6 +226,7 @@ async function loadContactsForSelector(campaignId = null) {
 }
 
 // Global exposure
+window.allCampaigns = allCampaigns;
 window.loadCampaigns = loadCampaigns;
 window.saveCampaign = saveCampaign;
 window.openCampaignModal = openCampaignModal;
