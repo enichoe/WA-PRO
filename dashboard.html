@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="dashboard-page">
+    <!-- Sidebar Overlay (mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
@@ -932,7 +935,8 @@
                 </div>
                 <div class="form-group">
                     <label for="contactPhone">Telefono *</label>
-                    <input type="tel" id="contactPhone" placeholder="+52 123 456 7890" required>
+                    <input type="tel" id="contactPhone" placeholder="963258741 o +51963258741" required>
+                    <small style="color:var(--text-muted);font-size:0.75rem;">Ingresa 9 dígitos (se agrega +51 automáticamente) o el número completo con código de país.</small>
                 </div>
                 <div class="form-group">
                     <label for="contactCompany">Empresa</label>

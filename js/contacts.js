@@ -161,10 +161,34 @@ async function deleteContact(id) {
 }
 
 /**
- * Normalizes phone numbers
+ * Normalizes phone numbers - adds Peru +51 country code if missing
+ * Accepts: 963258741 or +51963258741 or 51963258741
  */
 function normalizePhone(phone) {
-    return phone.replace(/[^0-9+]/g, '');
+    // Remove all non-digit and non-plus characters
+    let cleaned = phone.replace(/[^0-9+]/g, '');
+    
+    // Remove leading +
+    if (cleaned.startsWith('+')) {
+        cleaned = cleaned.substring(1);
+    }
+    
+    // If number starts with 51 and has 11 digits, it's already with country code
+    if (cleaned.startsWith('51') && cleaned.length === 11) {
+        return '+' + cleaned;
+    }
+    
+    // If number has 9 digits (Peruvian mobile), add +51
+    if (cleaned.length === 9) {
+        return '+51' + cleaned;
+    }
+    
+    // If it has more digits but no country code (fallback), just add +
+    if (!cleaned.startsWith('+')) {
+        return '+' + cleaned;
+    }
+    
+    return cleaned;
 }
 
 /**

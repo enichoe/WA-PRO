@@ -4,6 +4,18 @@
  * Main Application Hub
  */
 
+// Section display names in Spanish
+const SECTION_NAMES = {
+    dashboard: 'Dashboard',
+    contacts: 'Contactos',
+    import: 'Importar Excel',
+    campaigns: 'Campañas',
+    sender: 'Enviar Mensajes',
+    history: 'Historial',
+    templates: 'Plantillas',
+    settings: 'Configuración'
+};
+
 // Navigation logic
 function showSection(sectionId) {
     const sections = document.querySelectorAll('.content-section');
@@ -12,7 +24,8 @@ function showSection(sectionId) {
     const target = document.getElementById(`section-${sectionId}`);
     if (target) {
         target.classList.add('active');
-        document.getElementById('pageTitle').textContent = sectionId.charAt(0).toUpperCase() + sectionId.slice(1);
+        const title = SECTION_NAMES[sectionId] || (sectionId.charAt(0).toUpperCase() + sectionId.slice(1));
+        document.getElementById('pageTitle').textContent = title;
         
         // Update nav active state
         const navItems = document.querySelectorAll('.nav-item');
@@ -23,6 +36,11 @@ function showSection(sectionId) {
                 item.classList.remove('active');
             }
         });
+    }
+
+    // Auto-close sidebar on mobile after navigation
+    if (window.innerWidth <= 992) {
+        closeMobileSidebar();
     }
 
     // Load section specialized data
@@ -92,10 +110,28 @@ function showLoading(show, text = 'Cargando...') {
     }
 }
 
-// Sidebar toggle
+// Sidebar toggle - handles both desktop (collapsed) and mobile (open)
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('collapsed');
+    if (window.innerWidth <= 992) {
+        // Mobile: toggle 'open' class
+        const isOpen = sidebar.classList.toggle('open');
+        // Show/hide overlay
+        const overlay = document.getElementById('sidebarOverlay');
+        if (overlay) {
+            overlay.classList.toggle('active', isOpen);
+        }
+    } else {
+        // Desktop: toggle 'collapsed' class
+        sidebar.classList.toggle('collapsed');
+    }
+}
+
+function closeMobileSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.remove('open');
+    const overlay = document.getElementById('sidebarOverlay');
+    if (overlay) overlay.classList.remove('active');
 }
 
 // Global initialization
@@ -120,6 +156,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 filterContacts();
             }
         });
+    }
+
+    // Sidebar overlay click closes sidebar on mobile
+    const overlay = document.getElementById('sidebarOverlay');
+    if (overlay) {
+        overlay.addEventListener('click', closeMobileSidebar);
     }
 });
 
